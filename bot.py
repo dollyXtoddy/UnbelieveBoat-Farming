@@ -10,16 +10,14 @@ async def on_ready():
     try:
         number = 0
         while True:
-            channel = bot.get_channel(818226777381535754)
+            channel = bot.get_channel(818226777381535754) # ID do canal para utilizar os comandos.
             await channel.send("!work")
-            await asyncio.sleep(3)
+            await asyncio.sleep(3) # Devido ao lag do bot.
             await channel.send("!deposit all")
             number += 1
             print(f'{bot.user.name} coletado {number}x.')
-            await asyncio.sleep(600)
-                
+            await asyncio.sleep(600) # Tempo em segundos para coletar novamente 
     except:
-        print(f'Error as {bot.user.name}#{bot.user.discriminator}')
+        print(f'Erro em {bot.user.name}#{bot.user.discriminator}')
          
 bot.run(sys.argv[1], bot=False)
-    
